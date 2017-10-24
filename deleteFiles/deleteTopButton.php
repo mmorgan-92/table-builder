@@ -9,5 +9,8 @@
     <?php
     echo "<input type='hidden' class='form-control' name='topButtonName' value='".$createTopButtonRow['top_button_name']."'>";
     ?>
-    <button type="submit" class='btn btn-danger btn-sm btn-circle deleteBtn' name="deleteTopButton" class="btn btn-info" id="deleteTopButton">-</button>
+    <!--<button type="submit" class='btn btn-danger btn-sm btn-circle deleteBtn' name="deleteTopButton" class="btn btn-info" id="deleteTopButton">-</button>-->
+    <button type="submit" class="btn deleteBtn" name="deleteTopButton" id="deleteTopButton">
+      <i class="icon-plus-squared icon-large"></i>
+    </button>
   </form>

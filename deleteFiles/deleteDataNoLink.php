@@ -17,5 +17,8 @@
       echo "<input type='hidden' class='form-control' name='data' value='".$category2DataRow['data']."'>";
       ?>
 
-    <button type="submit" class='btn btn-danger btn-sm btn-circle deleteBtn' name="deleteTable" class="btn btn-info" id="deleteDataBtn">-</button>
+    <!--<button type="submit" class='btn btn-danger btn-sm btn-circle deleteBtn' name="deleteTable" class="btn btn-info" id="deleteDataBtn">-</button>-->
+    <button type="submit" class="cleanBtn" name="deleteTable" id="deleteTable">
+      <i class="icon-minus-squared"></i>
+    </button>
   </form>

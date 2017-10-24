@@ -75,8 +75,8 @@ $result = mysqli_query($conn, $sql);
               echo "<td>";
                 echo "<div class='row tableProducts'>";
                   echo "<div class='col-sm-12'";
-                    echo "<h5 style='margin-right: 1%;'>".$category1DataRow['category1data']."</h4>";
-                  echo "</div>";
+                    echo "<h5 style='margin-right: 1%;'>".$category1DataRow['category1data']."</h5></div>";
+                  echo "";
                 echo "</div>";
               echo "</td>";
               // start new column

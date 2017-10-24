@@ -12,4 +12,7 @@
       ?>
 
     <button type="submit" class='btn btn-danger btn-sm btn-circle deleteBtn' name="deleteColumn" class="btn btn-info" id="deleteColumnBtn">Delete Column</button>
+    <!--<button type="submit" class="cleanBtn" name="deleteColumn" id="deleteColumnBtn">
+      <i class="icon-minus-squared"></i>
+    </button>-->
   </form>

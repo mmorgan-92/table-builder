@@ -9,24 +9,26 @@ require_once 'connectToServer.php';
 //declare variables
 $linkTest = "none";
 
-// start looping though database
-// get all fo the distinct group names and  manin category for each table
+//start looping though database
+// get all fo the distinct group names and main category for each table
 $sql = "SELECT DISTINCT groupname,category1 FROM opspage_copy";
 $result = mysqli_query($conn, $sql);
+  
   // start loop for each table
   while($row = mysqli_fetch_array($result)) {
     echo "<div class='container tableBody'>"; // contain for the table
 
       // create header for the table
       echo "<div class='container tableTitle'>"; // container for table title and buttons
-        echo "<div class='row'style='float: right; padding-right: 2%'>";
+        echo "<div class='row'>";
           echo "<div class='col-lg-12'>";
-            include 'deleteFiles/deleteTable.php';
+            
           echo "</div>";
         echo "</div>";
         echo "<div class='row'style='text-align: center;'>";
           echo "<div class='col-sm-12'>";
-            echo "<h2 style='padding-left: 5%;'>" .$row["groupname"]."</h2>"; // output the title of the table
+            echo "<h2>" .$row["groupname"]."</h2>"; // output the title of the table
+            include 'deleteFiles/deleteTable.php';
           echo "</div>";
         echo "</div>";
 
@@ -55,7 +57,7 @@ $result = mysqli_query($conn, $sql);
             }
         echo "</div>";
         echo "<div class='row'>";
-          echo "<div class='col-sm-12' style='float: left; padding-left: 1%;'>";
+          echo "<div class='col-sm-12'>";
             include 'createModalFiles/createTopButtonModal.php'; // modal to create top button
           echo "</div>";
         echo "</div>";
@@ -88,21 +90,32 @@ $result = mysqli_query($conn, $sql);
             //start a new row
             echo "<tr>";
               // output category1
-              echo "<td>";
-                echo "<div class='row tableProducts'>";
-                  echo "<div class='col-sm-4'";
-                    echo "<h5 style='margin-right: 1%;'>".$category1DataRow['category1data']."</h4>";
-                  echo "</div>";
-                  echo "<div class='col-sm-2'";
+             echo "<td>";
+                
+                //echo "<p>".$category1DataRow['category1data']."</p>";
+              //echo "</td>";
+              
+              //echo "<td>";
+                //include 'deleteFiles/deleteProduct.php';
+              //echo "</td>";
+                echo "<div class='tableProducts'>";
+                  echo "<div>";
                     include 'deleteFiles/deleteProduct.php';
+                  echo "</div>";
+                  echo "<div>";
+                    echo "<p style='margin-right: 1%;'>".$category1DataRow['category1data']."</p>";
                   echo "</div>";
                 echo "</div>";
               echo "</td>";
+              
               // start new column
+              
+              // get category2
+              $getCategory2B = "SELECT DISTINCT category2 FROM opspage_copy WHERE groupname='".$row['groupname']."' AND category1='".$row['category1']. "' AND category1data IS NOT NULL AND category2 IS NOT NULL";
+              $getCategory2ResultB = mysqli_query($conn,$getCategory2B);
+              
               echo "<td>";
-                // get category2
-                $getCategory2B = "SELECT DISTINCT category2 FROM opspage_copy WHERE groupname='".$row['groupname']."' AND category1='".$row['category1']. "' AND category1data IS NOT NULL AND category2 IS NOT NULL";
-                $getCategory2ResultB = mysqli_query($conn,$getCategory2B);
+
                 // loop through category2's
                 while($category2RowB = mysqli_fetch_array($getCategory2ResultB)){
                   // get data from category2
@@ -118,29 +131,27 @@ $result = mysqli_query($conn, $sql);
                       $category2DataLinkRow = mysqli_fetch_array($getCategory2DataLinkResult);
                       if ($category2DataLinkRow['link'] != NULL){
                         echo "<div class='row tableProducts'>";
-                          echo "<div class='col-sm-4'>";
-                            echo "<a class='data' href=\"" . $category2DataLinkRow['link'] . "\">" . $category2DataRow['data'] . "  </a>";
-                          echo "</div>";
                           echo "<div class='col-sm-2'>";
                             include 'deleteFiles/deleteData.php';
                           echo "</div>";
+                          echo "<div class='col-sm-6'>";
+                            echo "<a class='data' href=\"" . $category2DataLinkRow['link'] . "\">" . $category2DataRow['data'] . "  </a>";
+                          echo "</div>";
                         echo "</div>";
-                            echo "<br>";
                       }
                       else{
-                        echo "<div class='row tableProducts'>";
-                          echo "<div class='col-sm-4'>";
-                            echo "<p class='data'>".$category2DataRow['data'] . "</p>";
-                          echo "</div>";
-                          echo "<div class='col-sm-2'>";
+                        echo "<div class='tableProducts'>";
+                          echo "<div>";
                             include 'deleteFiles/deleteDataNoLink.php';
-                            echo "<br>";
+                          echo "</div>";
+                          echo "<div>";
+                            echo "<p class='data'>".$category2DataRow['data'] . "</p>";
                           echo "</div>";
                         echo "</div>";
                       }
                     }
                   }
-                  echo "<div class='row' style='float: left;'>";
+                  echo "<div>";
                   include 'createModalFiles/createNewTableDataModal.php';
                   echo "</div>";
                   echo "<td>";
@@ -149,7 +160,7 @@ $result = mysqli_query($conn, $sql);
               }
               echo "<tr>";
                 echo "<td>";
-                echo "<div class='row' style='float: right;'>";
+                echo "<div>";
                       include 'createModalFiles/createNewMainColumnModal.php';
                       echo "</div>";
                 echo "</td>";
@@ -162,3 +173,4 @@ $result = mysqli_query($conn, $sql);
 
 $conn->close();
 ?>
+
