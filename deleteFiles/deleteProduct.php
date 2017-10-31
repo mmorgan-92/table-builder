@@ -11,9 +11,10 @@
     echo "<input type='hidden' class='form-control' name='category1Data' value='".$category1DataRow['category1data']."'>";
     ?>
 
-  <!--<button type="submit" class='btn btn-danger btn-sm btn-circle deleteBtn'  name="deleteTable" id="deleteProductBtn">-</button>-->
-  <button type="submit" class="cleanBtn float-right" name="deleteTable" id="deleteTable">
+  <button type="submit" class='btn btn-danger btn-sm btn-circle deleteBtn'  name="deleteTable" id="deleteProductBtn">Delete Row</button>
+  <!--<button type="submit" class="cleanBtn float-right" name="deleteTable" id="deleteTable">
     <i class="icon-minus-squared"></i>
-  </button>
+  </button>-->
+
 </form>
 

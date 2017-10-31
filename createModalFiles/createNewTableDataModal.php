@@ -1,5 +1,5 @@
 <?php
-echo "<button class='cleanBtn' data-toggle='modal' data-target='#newTableDataModal' data-group='".$row['groupname']."' data-category1='".$row['category1']."' data-info='".$category1DataRow['category1data']."' data-category2='".$category2RowB['category2']."' id='createTableData'><i class='icon-plus-squared'></i></button><span class='add-data'>Add data...</span>";
+echo "<button class='cleanBtn' data-toggle='modal' data-target='#newTableDataModal' data-group='".$row['groupname']."' data-category1='".$row['category1']."' data-info='".$category1DataRow['category1data']."' data-category2='".$category2RowB['category2']."' id='createTableData'><i class='icon-plus-squared'></i><span class='add-data'>Add entry...</span></button>";
 echo "<div id='newTableDataModal' class='modal fade' tabindex='-1' role='dialog' aria-labelledby='tableDataLabel' aria-hidden='true' style='dispaly: none;'>";
 ?>
   <div class="modal-dialog">

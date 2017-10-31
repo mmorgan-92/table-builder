@@ -100,10 +100,11 @@ $result = mysqli_query($conn, $sql);
               //echo "</td>";
                 echo "<div class='tableProducts'>";
                   echo "<div>";
-                    include 'deleteFiles/deleteProduct.php';
+                    
                   echo "</div>";
                   echo "<div>";
-                    echo "<p style='margin-right: 1%;'>".$category1DataRow['category1data']."</p>";
+                    echo "<b>".$category1DataRow['category1data']."</b>";
+                    include 'deleteFiles/deleteProduct.php';
                   echo "</div>";
                 echo "</div>";
               echo "</td>";

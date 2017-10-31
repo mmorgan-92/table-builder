@@ -1,0 +1,867 @@
+
+
+
+header#headerMain {
+    position: relative;
+    background: #333;
+    height: 54px;
+}
+
+header .reuters-logo {
+    margin: 0;
+}
+
+header .reuters-logo a {
+    background: url("//s3.reutersmedia.net/resources_v2/images/r-logo.png") no-repeat;
+    background-size: 300px;
+    display: inline-block;
+    height: 42px;
+    width: 204px;
+}
+
+header .reuters-nav-main {
+    margin: 10px auto 0;
+    width: 400px;
+}
+
+
+#headerMain {
+    text-align: center;
+}
+
+
+
+nav {
+    clear: both;
+    position: relative;
+    background: #333;
+    height: 36px;
+    z-index: 9999999;
+    text-align: center;
+}
+
+nav .nav-list {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    margin-left: -550px;
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: right .25s ease-in-out, left .25s ease-in-out, opacity .25s ease-in-out .4s, visibility .25s ease-in-out .4s;
+    -moz-transition: right .25s ease-in-out, left .25s ease-in-out, opacity .25s ease-in-out .4s, visibility .25s ease-in-out .4s;
+    transition: right .25s ease-in-out, left .25s ease-in-out, opacity .25s ease-in-out .4s, visibility .25s ease-in-out .4s;
+}
+
+
+
+nav a:hover {
+    text-decoration: none;
+}
+
+.nav-item {
+    position: relative;
+    text-align: center;
+    z-index: 6000000;
+    padding: 2px 10px 8px;
+    height: 31px;
+    cursor: pointer;
+    -webkit-transition: background .15s ease-in-out;
+    -moz-transition: background .15s ease-in-out;
+    transition: background .15s ease-in-out;
+}
+
+.nav-item.active a.nav-link-sec {
+    border-bottom: 4px solid #ff8000;
+}
+
+.nav-item a {
+    display: block;
+    padding: 0;
+    font-family: knowledge-reg, helvetica, arial, sans-serif;
+    font-weight: 400;
+    font-size: 1.4em;
+    line-height: 1.83;
+    color: #fff;
+    text-align: center;
+    -webkit-transition: color .25s ease-in-out;
+    -moz-transition: color .25s ease-in-out;
+    transition: color .25s ease-in-out;
+}
+
+.nav-item.home-tab {
+    height: 0;
+    visibility: hidden;
+}
+
+.nav-item.home-tab.active-icon {
+    height: 31px;
+    visibility: visible;
+    position: absolute;
+    left: -10px;
+}
+
+.nav-item.active-icon.search-tab {
+    position: absolute;
+    right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+li.nav-item:hover {
+    background: #fafafa;
+}
+
+li.nav-item.no-subnav:hover {
+    background: inherit;
+}
+
+li.nav-item.home-tab.active-icon:hover div.home-icon {
+    background-position: -77px -34px;
+}
+
+li.nav-item.pictures-tab.active-icon:hover div.pictures-icon {
+    background-position: -58px -4px;
+}
+
+li.nav-item.video-tab.active-icon:hover div.video-icon {
+    background-position: -36px -4px;
+}
+
+li.nav-item.search-tab.active-icon:hover div.search-icon {
+    background-position: -1px -35px;
+}
+
+li.nav-item:hover a.nav-link-sec {
+    color: #ff8000;
+    border-bottom: none;
+}
+
+.nav-item .subnav {
+    position: absolute;
+    top: 36px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    padding: 0 2px 2px 0;
+    background: #fafafa;
+    width: 343px;
+    -webkit-transition: all .05s ease-in-out .20s;
+    -moz-transition: all .05s ease-in-out .20s;
+    transition: all .05s ease-in-out .20s;
+}
+
+.nav-item .subnav.open {
+    -webkit-transition: all .10s ease-in-out;
+    -moz-transition: all .10s ease-in-out;
+    transition: all .10s ease-in-out;
+}
+
+.nav-item:hover .subnav {
+    visibility: visible;
+    opacity: 1;
+    right: inherit;
+    bottom: inherit;
+}
+
+.subnav-inset {
+    padding: 5px 7px 5px;
+    border-top: 0;
+    background: #fafafa;
+    text-align: left;
+}
+
+.nav-item .subnav-list {
+    list-style: none;
+    width: 150px;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    text-align: left;
+    vertical-align: text-top;
+}
+
+.subnav-list li {
+    padding: 0;
+    float: none;
+    display: block;
+}
+
+.subnav-list li:hover a {
+    color: #ff8000;
+}
+
+.subnav-list a {
+    padding: 8px 0 8px 5px;
+    background: none;
+    font-size: 1.3em;
+    font-weight: normal;
+    line-height: 1.38;
+    color: #333;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.header-mini-logo {
+    position: absolute;
+    top: 7px;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    z-index: 1;
+}
+
+.header-mini-logo.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.header-mini-logo a {
+    background: url("//s3.reutersmedia.net/resources_v2/images/r-logo-sm.png") no-repeat;
+    background-size: 172px;
+    display: inline-block;
+    height: 24px;
+    width: 118px;
+}
+
+.BETACN .header-mini-logo a {
+    background-position: 0 -48px;
+    width: 152px;
+}
+
+.BETAJP .header-mini-logo a {
+    background-position: 0 -96px;
+    width: 172px;
+}
+
+.nav-item.active-icon {
+    vertical-align: bottom;
+    position: relative;
+}
+
+.nav-item.active-icon .home-icon,
+.nav-item .search-icon,
+.nav-item.active-icon .pictures-icon,
+.nav-item.active-icon .video-icon {
+    visibility: visible;
+    opacity: 1;
+    padding: 0 10px;
+    background: url("//s4.reutersmedia.net/resources_v2/images/sprites-icons.png") no-repeat;
+    background-size: 125px;
+    padding: 0;
+}
+
+.nav-item.active-icon .home-icon {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    background-position: -95px -34px;
+    -webkit-transition: opacity .25s ease-in-out .3s;
+    -moz-transition: opacity .25s ease-in-out .3s;
+    transition: opacity .25s ease-in-out .3s;
+}
+
+.nav-item .search-icon {
+    height: 16px;
+    width: 16px;
+    margin: 3px 0 0 0;
+    background-position: -19px -35px;
+    -webkit-transition: opacity .25s ease-in-out .75s, visibility .25s ease-in-out .75s;
+    -moz-transition: opacity .25s ease-in-out .75s, visibility .25s ease-in-out .75s;
+    transition: opacity .25s ease-in-out .75s, visibility .25s ease-in-out .75s;
+}
+
+.nav-item.active-icon .pictures-icon {
+    display: inline-block;
+    height: 12px;
+    width: 16px;
+    background-position: -58px -20px;
+    -webkit-transition: opacity .25s ease-in-out .3s;
+    -moz-transition: opacity .25s ease-in-out .3s;
+    transition: opacity .25s ease-in-out .3s;
+}
+
+.nav-item.active-icon .video-icon {
+    display: inline-block;
+    height: 12px;
+    width: 20px;
+    background-position: -36px -20px;
+    -webkit-transition: opacity .25s ease-in-out .3s;
+    -moz-transition: opacity .25s ease-in-out .3s;
+    transition: opacity .25s ease-in-out .3s;
+}
+
+.nav-item.active-text .home-icon,
+.nav-item.active-text .pictures-icon,
+.nav-item.active-text .video-icon {
+    margin-right: 8px;
+}
+
+.nav-item .text {
+    display: none;
+}
+
+.nav-item.active-text .text {
+    display: inline-block;
+}
+
+.nav-white-space {
+    position: absolute;
+    width: 100%;
+    height: 0;
+    background: #fafafa;
+    z-index: 9999998;
+    -webkit-transition: height .25s ease-in-out .25s;
+    -moz-transition: height .25s ease-in-out .25s;
+    transition: height .25s ease-in-out .25s;
+}
+
+.nav-white-space.open {
+    border-bottom: 1px solid #ccc;
+    -webkit-transition: height .25s ease-in-out;
+    -moz-transition: height .25s ease-in-out;
+    transition: height .25s ease-in-out;
+}
+
+nav.fixed {
+    position: fixed;
+    top: 0;
+}
+
+nav.fixed .nav-item.pictures-tab .subnav {
+    top: 36px;
+}
+
+.nav-white-space.fixed {
+    position: fixed;
+    top: 35px;
+}
+
+#searchBar {
+    position: absolute;
+    left: 50%;
+    margin-left: -550px;
+    width: 1100px;
+}
+
+.search {
+    margin: 18px 0 0 13px;
+}
+
+.search-form {
+    position: relative;
+}
+
+.search-field {
+    position: absolute;
+    border: 0;
+    outline: none;
+    color: #fff;
+    background: #333;
+    font-size: 1.4em;
+    height: 26px;
+    width: 1053px;
+    top: 3px;
+    left: 22px;
+    pointer-events: none;
+    opacity: 0;
+    font-family: knowledge-reg, helvetica, arial, sans-serif;
+    font-weight: 400;
+    -webkit-transition: all .25s ease-in-out;
+    -moz-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+
+.search-line {
+    position: absolute;
+    background: #333;
+    height: 2px;
+    width: 1053px;
+    top: 25px;
+    left: 22px;
+    visibility: hidden;
+    opacity: 0;
+    border-bottom: 1px solid #444;
+    -webkit-transition: all .25s ease-in-out;
+    -moz-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+
+.search-submit-button,
+.search-close-button {
+    background: url("//s4.reutersmedia.net/resources_v2/images/sprites-icons.png") no-repeat;
+    background-size: 125px;
+}
+
+.search-submit-button {
+    background-position: -57px -32px;
+    height: 18px;
+    width: 18px;
+    margin: 0;
+    border: none;
+    position: absolute;
+    left: 1086px;
+    top: 6px;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: left .5s ease-in-out .1s, opacity .1s ease-in-out .2s, visibility .1s ease-in-out .2s;
+    -moz-transition: left .5s ease-in-out .1s, opacity .1s ease-in-out .2s, visibility .1s ease-in-out .2s;
+    transition: left .5s ease-in-out .1s, opacity .1s ease-in-out .2s, visibility .1s ease-in-out .2s;
+}
+
+.search-close-button {
+    background-position: -1px -17px;
+    height: 16px;
+    width: 16px;
+    margin: 0;
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 9px;
+    visibility: hidden;
+    opacity: 0;
+    cursor: pointer;
+    -webkit-transition: opacity .1s ease-in-out;
+    -moz-transition: opacity .1s ease-in-out;
+    transition: opacity .1s ease-in-out;
+}
+
+.search-close-button:hover {
+    background-position: -1px -2px;
+}
+
+nav .nav-list.nav-hide {
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: right .25s ease-in-out, opacity .25s ease-in-out, visibility .25s ease-in-out;
+    -moz-transition: right .25s ease-in-out, opacity .25s ease-in-out, visibility .25s ease-in-out;
+    transition: right .25s ease-in-out, opacity .25s ease-in-out, visibility .25s ease-in-out;
+}
+
+#searchBar.active .search-field,
+#searchBar.active .search-line {
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 1;
+    -webkit-transition: all .25s ease-in-out .5s;
+    -moz-transition: all .25s ease-in-out .5s;
+    transition: all .25s ease-in-out .5s;
+}
+
+#searchBar.active .search-submit-button {
+    visibility: visible;
+    opacity: 1;
+    top: 6px;
+    left: 0;
+    -webkit-transition: left .5s ease-in-out .1s, visibility .5s ease-in-out .3s, opacity .5s ease-in-out .3s;
+    -moz-transition: left .5s ease-in-out .1s, visibility .5s ease-in-out .3s, opacity .5s ease-in-out .3s;
+    transition: left .5s ease-in-out .1s, visibility .5s ease-in-out .3s, opacity .5s ease-in-out .3s;
+}
+
+#searchBar.active .search-close-button {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: opacity .1s ease-in-out .75s, visibility .1s ease-in-out .75s;
+    -moz-transition: opacity .1s ease-in-out .75s, visibility .1s ease-in-out .75s;
+    transition: opacity .1s ease-in-out .75s, visibility .1s ease-in-out .75s;
+}
+
+.nav-list.nav-hide .search-icon {
+    visibility: hidden;
+}
+
+#suggestedSearch {
+    font-size: 0;
+    overflow: hidden;
+    position: absolute;
+    left: 22px;
+    top: 36px;
+    width: 1053px;
+    z-index: 16777266;
+    display: none;
+}
+
+#searchBar.active #suggestedSearch {
+    display: block;
+}
+
+#suggestedSearchResults {
+    background-color: #FFF;
+    border-top: none;
+    clear: both;
+}
+
+#suggestedSearchResults h5 {
+    color: #FE8024;
+    font-size: 13px;
+    margin: 0;
+    padding: 10px 0 0;
+    text-transform: uppercase;
+}
+
+#suggestedSearchResults ul li {
+    font-family: knowledge-reg, helvetica, arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.38em;
+    list-style: none;
+}
+
+#suggestedSearchResults ul li a {
+    display: inline-block;
+    clear: both;
+    padding: 5px;
+    width: 100%;
+}
+
+#suggestedSearchResults ul li:hover,
+#suggestedSearchResults #search-company-results table tr:hover {
+    background: #f0f0f0;
+}
+
+#suggestedSearchResults ul li:hover a,
+#suggestedSearchResults ul li a.selectedText,
+#suggestedSearchResults #search-company-results table tr:hover a,
+#suggestedSearchResults #search-company-results table tr a.selectedText {
+    text-decoration: none;
+    color: #ff8000;
+}
+
+#suggestedSearchResults ul {
+    border-bottom: 1px solid #EAEAEA;
+    margin: 0 10px;
+    padding: 0 0 10px;
+}
+
+#suggestedSearchResults ul#search-company-list {
+    border-bottom: none;
+    padding: 0;
+}
+
+#suggestedSearchResults ul li.selected,
+#suggestedSearchResults table tr.selected {
+    background-color: #f0f0f0;
+}
+
+#suggestedSearchResults #search-company-results {
+    overflow: hidden;
+    padding: 10px 0 0;
+}
+
+#suggestedSearchResults table#search-company-list {
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#suggestedSearchResults table#search-company-list td {
+    padding: 5px 0;
+}
+
+#search-company-list tr td:first-child {
+    width: 250px;
+}
+
+#search-company-list tr {
+    display: block;
+    padding: 0 5px;
+}
+
+#suggestedSearchResults #search-company-list .companyName,
+#suggestedSearchResults #search-company-list .exchange {
+    color: #666;
+    font-size: 14px;
+}
+
+#suggestedSearchResults #search-company-list .companyName {
+    display: block;
+    padding: 0 5px;
+}
+
+#suggestedSearchResults #search-company-list .ric {
+    display: inline-block;
+    float: left;
+    font-size: 16px;
+    width: 250px;
+}
+
+#suggestedSearchResults #noResults {
+    padding: 10px 0 0;
+}
+
+#suggestedSearchResults #search-company {
+    display: inline-block;
+    line-height: inherit;
+    margin: 0;
+    padding: 10px 0;
+    text-align: right;
+    width: 100%;
+}
+
+#suggestedSearchResults #search-company a {
+    display: inline-block;
+    color: #666;
+    font-size: 13px;
+    background: url("//s4.reutersmedia.net/resources_v2/images/ico-arrow-right-2x.png") right center no-repeat;
+    background-size: 5px auto;
+    text-transform: uppercase;
+    margin-right: 10px;
+    padding: 0 12px 0 0;
+}
+
+#suggestedSearchResults #search-company a:hover {
+    color: #ff8000;
+    background: url("//s4.reutersmedia.net/resources_v2/images/ico-arrow-right-down-2x.png") right center no-repeat;
+    background-size: 5px auto;
+}
+
+#overlayForSearch {
+    display: none;
+    opacity: .55;
+    z-index: 50000;
+    background: #000;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-top: -26px;
+    top: 0;
+}
+
+.utilities .follow-header-button {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url("//s3.reutersmedia.net/resources_v2/images/sprites-social-sm.png") no-repeat;
+    background-size: 200px;
+}
+
+.utilities .follow-header-facebook {
+    margin-right: 11px;
+    background-position: 0 0;
+}
+
+.utilities .follow-header-twitter {
+    margin-right: 10px;
+    background-position: -20px 0;
+}
+
+.utilities .follow-header-linkedin {
+    background-position: -100px 0;
+}
+
+.utilities .follow-header-wechat {
+    margin-right: 10px;
+    background-position: -140px 0;
+}
+
+.utilities .follow-header-weibo {
+    background-position: -160px 0;
+}
+
+.utilities .follow-header-facebook:hover {
+    background-position: 0 -40px;
+}
+
+.utilities .follow-header-twitter:hover {
+    background-position: -20px -40px;
+}
+
+.utilities .follow-header-linkedin:hover {
+    background-position: -100px -40px;
+}
+
+.utilities .follow-header-wechat:hover {
+    background-position: -140px -40px;
+}
+
+.utilities .follow-header-weibo:hover {
+    background-position: -160px -40px;
+}
+
+.info-banner {
+    text-align: center;
+}
+
+.info-banner .breakingStory,
+.info-banner .developingStory,
+.info-banner .happening {
+    color: #fff;
+    padding: 10px 0;
+}
+
+.info-banner .breakingStory {
+    background: #e52929;
+}
+
+.info-banner .developingStory {
+    color: #000;
+    background: #b5b5b5;
+}
+
+.info-banner .happening {
+    background: #006185;
+}
+
+.info-banner h1 {
+    color: #fff;
+    font-size: 1.3em;
+    line-height: inherit;
+    margin: 0;
+}
+
+.info-banner .breakingNewsLabel {
+    font-weight: bold;
+}
+
+.info-banner a {
+    color: #fff;
+}
+
+.info-banner .developingStory a {
+    color: #000;
+}
+
+.info-banner a:hover {
+    text-decoration: underline;
+}
+
+.info-banner a:after {
+    content: "\00bb";
+    padding: 0 0 0 5px;
+}
+
+
+
+.ad-leaderboard,
+#div_gpt_lb,
+#div_gpt_lb_center,
+#div_gpt_lb_low {
+    text-align: center;
+}
+
+.inter_bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .8;
+    top: 0;
+    z-index: 214748300;
+    left: 0;
+    display: none;
+}
+
+#div_gpt_intro,
+#div_gpt_intro2 {
+    position: fixed;
+    z-index: 10000000000000000000;
+    margin: 0 auto;
+    left: 15%;
+    right: 15%;
+    top: 164px;
+    text-align: center;
+    width: 640px;
+}
+
+.close_button {
+    background: url("//s4.reutersmedia.net/resources_v2/images/ico-close-inter.png") no-repeat right;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    height: 20px;
+    width: 100px;
+    display: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+.advert_mask {
+    background: #000;
+    position: absolute;
+    z-index: 1000;
+    -moz-opacity: 0;
+    opacity: 0;
+}
+
+.stickyContainer1,
+.stickyContainer2 {
+    height: 1250px;
+    position: relative;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+}
+
+.mod-sticky-2 {
+    top: 0;
+    position: absolute;
+}
+
+@media(max-width:1200px) {
+    .edition-header .wrap,
+    .edition-header .container,
+    #breakingNews.wrap {
+        width: 940px;
+    }
+    .footer .wrap div {
+        width: 964px;
+    }
+    .footer .wrap div.footer-more-links {
+        width: 300px;
+        text-align: right;
+    }
+    nav .nav-list {
+        width: 940px;
+        margin-left: -470px;
+    }
+    .nav-item .subnav {
+        width: 165px;
+    }
+    #searchBar {
+        width: 964px;
+    }
+    .search-field,
+    #suggestedSearch,
+    .search-line {
+        width: 882px;
+        left: 110px;
+    }
+    #searchBar.active .search-submit-button {
+        left: 80px;
+    }
+    .search-submit-button {
+        left: 1018px;
+    }
+    .search-close-button {
+        right: -56px;
+    }
+    .nav-item.active-text .text {
+        display: none;
+    }
+    .nav-item.active-text .home-icon,
+    .nav-item.active-text .pictures-icon,
+    .nav-item.active-text .video-icon {
+        margin-right: 0;
+    }
+    .edition-header .edition-list li {
+        padding-right: 50.8px;
+    }
+    .BETAJP .header-mini-logo a {
+        background-position: 0 -65px;
+        background-size: 121px;
+    }
+    .footer-body .product {
+        width: 120px;
+    }
+}

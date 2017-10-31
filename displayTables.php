@@ -20,7 +20,7 @@ $result = mysqli_query($conn, $sql);
       echo "<div class='container tableTitle'>"; // container for table title and buttons
         echo "<div class='row'style='text-align: center;'>";
           echo "<div class='col-sm-12'>";
-            echo "<h2 style='padding-left: 5%;'>" .$row["groupname"]."</h2>"; // output the title of the table
+            echo "<h2>" .$row["groupname"]."</h2>"; // output the title of the table
           echo "</div>";
         echo "</div>";
 
@@ -80,7 +80,7 @@ $result = mysqli_query($conn, $sql);
                 echo "</div>";
               echo "</td>";
               // start new column
-              echo "<td>";
+              echo "<td class='center'>";
                 // get category2
                 $getCategory2B = "SELECT DISTINCT category2 FROM opspage_copy WHERE groupname='".$row['groupname']."' AND category1='".$row['category1']. "' AND category1data IS NOT NULL AND category2 IS NOT NULL";
                 $getCategory2ResultB = mysqli_query($conn,$getCategory2B);
@@ -114,7 +114,7 @@ $result = mysqli_query($conn, $sql);
                       }
                     }
                   }
-                  echo "<td>";
+                  echo "<td class='center'>";
                 }
                 echo "</tr>";
               }
