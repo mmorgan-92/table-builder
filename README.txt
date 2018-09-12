@@ -23,6 +23,10 @@ In order to run this program you will need to have a running
 installation of apache and mysql and be using eiher google or 
 firefox.
 
+Using mysql you will need to import the table_builder.sql file,
+and change the connectToServer.php file to your database's login
+credentials.
+
 ////////////////////
 Authors
 ////////////////////
