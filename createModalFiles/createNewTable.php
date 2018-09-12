@@ -1,5 +1,6 @@
 <?php
-echo "<button class='btn btn-info btn-sm btn-circle' data-toggle='modal' data-target='#createTableModal' id='createNewTable'>Create New Table</button>";
+//Modal to create a new table
+
 echo "<div id='createTableModal' class='modal fade' tabindex='-1' role='dialog' aria-labelledby='newTableLabel' aria-hidden='true' style='dispaly: none;'>";
 ?>
   <div class="modal-dialog">

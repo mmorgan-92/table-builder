@@ -4,7 +4,6 @@
 header#headerMain {
     position: relative;
     background: #333;
-    height: 54px;
 }
 
 header .reuters-logo {
@@ -20,7 +19,7 @@ header .reuters-logo a {
 }
 
 header .reuters-nav-main {
-    margin: 10px auto 0;
+    margin: 10px auto 5px;
     width: 400px;
 }
 

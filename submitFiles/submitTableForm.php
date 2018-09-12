@@ -1,7 +1,7 @@
 <?php
 //connect to the server
 require_once '../connectToServer.php';
-
+session_start();
 //define variables
 $groupName = "";
 $mainColumnName = "";
@@ -33,19 +33,22 @@ for($i = 0; $i < $length; $i++)
 
 for ($i = 0; $i < $length; $i++)
 {
-  $sql = "INSERT INTO opspage_copy (groupname, category1, category2) VALUES ('$groupName', '$mainColumnName', '$columnNames[$i]')";
-  if ($conn->query($sql) === TRUE) {
+  $sql = "INSERT INTO table_data (groupname, category1, category2) VALUES ('$groupName', '$mainColumnName', '$columnNames[$i]')";
+  if ($conn->query($sql) === TRUE) 
+  {
 
-  } else {
+  } 
+  else {
     echo '<script language="javascript">';
     echo 'alert("error creating table")';
     echo '</script>';
   }
 }
+$log = "INSERT INTO change_log  (user, change_made) VALUES ('".$_SESSION['username']."', 'added table ".$groupName."')";
+if ( $conn->query($log) === TRUE ){
 
+}
 
 //close connection
 $conn->close();
-
-header('Location: ../editTable.php');
 ?>

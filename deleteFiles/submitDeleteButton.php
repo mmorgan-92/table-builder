@@ -1,6 +1,7 @@
 <?php
 //connect to the server
 require_once '../connectToServer.php';
+session_start();
 
 //define variables
 $groupName = "";
@@ -36,10 +37,24 @@ else{
       echo "category12 needs to be set";
     }
 
-$sql = "DELETE FROM opspage_copy WHERE groupname='$groupName' AND category1='$category1' AND top_button_name='$topButtonName'";
-if ($conn->query($sql) === TRUE) {
+    
+$deleteTable = " TRUNCATE TABLE undo_table";
+if ($conn->query($deleteTable) === TRUE){
+    $copyTable = "INSERT undo_table SELECT * FROM table_data";
+    if ($conn->query($copyTable) === TRUE){
+    }
+}
 
-} else {
+$sql = "DELETE FROM table_data WHERE groupname='$groupName' AND category1='$category1' AND top_button_name='$topButtonName'";
+if ($conn->query($sql) === TRUE) 
+{
+  $log = "INSERT INTO change_log  (user, change_made) VALUES ('".$_SESSION['username']."', 'deleted top button ".$topButtonName." from ".$groupName."')";
+  if ( $conn->query($log) === TRUE ){
+
+  }
+}
+else
+ {
   echo '<script language="javascript">';
   echo 'alert("error deleting data from table")';
   echo '</script>';
@@ -47,5 +62,4 @@ if ($conn->query($sql) === TRUE) {
 
 require_once '../closeConnection.php';
 
-//header('Location: ../editTable.php');
 ?>

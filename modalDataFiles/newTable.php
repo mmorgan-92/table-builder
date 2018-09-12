@@ -38,7 +38,7 @@
 
          </div>
          <div class="modal-footer">
-           <button type="button" class="btn btn-info" id="addRow">Add Row
+           <button type="button" class="btn btn-info" id="addRow">Add Row</button>
            <button type="submit" name="Submit" class="btn btn-info">Submit</button>
          </div>
        </form>

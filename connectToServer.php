@@ -1,17 +1,15 @@
 
 <?php
 //connect to the server
-$servername = getenv('IP');
-$username = getenv('C9_USER');
-$password = "";
-$dbname = "oppspage";
-$dbport = 3306;
+$servername = "localhost";
+$username = "root";
+$password = 'B0tt0m92!';
+$dbname = "table_builder";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname, $dbport);
+$conn = new mysqli($servername, $username,$password,$dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
 ?>

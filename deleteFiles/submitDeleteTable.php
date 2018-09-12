@@ -22,16 +22,28 @@ if (isset($_POST['groupName']) && !empty($_POST['groupName'])) {
       echo "groupName needs to be set";
     }
 
-$sql = "DELETE FROM opspage_copy WHERE groupname='$groupName'";
-if ($conn->query($sql) === TRUE) {
-
-} else {
-  echo '<script language="javascript">';
-  echo 'alert("error deleting table")';
-  echo '</script>';
+    $deleteTable = " TRUNCATE TABLE undo_table";
+if ($conn->query($deleteTable) === TRUE){
+    $copyTable = "INSERT undo_table SELECT * FROM table_data";
+    if ($conn->query($copyTable) === TRUE){
+    }
 }
 
-require_once '../closeConnection.php';
+  $sql = "DELETE FROM table_data WHERE groupname='$groupName'";
+  if ($conn->query($sql) === TRUE)
+  {
+    $log = "INSERT INTO change_log  (user, change_made) VALUES ('".$_SESSION['username']."', 'deleted table ".$groupName."')";
+    if ( $conn->query($log) === TRUE ){
 
-header('Location: ../editTable.php');
+    }
+  } 
+  else {
+    echo '<script language="javascript">';
+    echo 'alert("error deleting table")';
+    echo '</script>';
+  }
+
+    require_once '../closeConnection.php';
+
+    header('Location: ../editTable.php');
 ?>

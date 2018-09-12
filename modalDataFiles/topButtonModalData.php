@@ -1,4 +1,5 @@
 <?php
+// the form that is present in the top button modal
 
 require_once '../connectToServer.php';
 
@@ -14,7 +15,7 @@ $category1 = $_POST['category1'];
 }
 ?>
 <!-- start of the form -->
-<form class="form-horizontal" action="submitFiles/submitTopButton.php" method="post">
+<form class="form-horizontal" id="topButtonForm" action="submitFiles/submitTopButton.php" method="post">
   <div class="modal-body">
     <div class="row">
       <div class="col-sm-12">
@@ -58,6 +59,6 @@ $category1 = $_POST['category1'];
   </div>
   <!-- start of modal footer -->
   <div class="modal-footer">
-    <button type="submit" name="Submit" class="btn btn-info" id="submitTopButton">Submit</button>
+    <button type="submit" name="Submit" class="btn btn-info" id="submitTopButton" data-target="#displayEditTable" data-gpName="<?php echo $gpName; ?>">Submit</button>
   </div>
 </form>

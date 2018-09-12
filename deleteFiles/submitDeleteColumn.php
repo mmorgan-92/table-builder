@@ -18,7 +18,6 @@ $data = htmlspecialchars($data);
 return $data;
 }
 
-
 if (isset($_POST['groupName']) && !empty($_POST['groupName'])) {
       $groupName = test_input($_POST['groupName']);
     }
@@ -39,17 +38,28 @@ else{
   echo "category2 needs to be set";
 }
 
-
-$sql = "DELETE FROM opspage_copy WHERE groupname='$groupName' AND category1='$category1' AND category2='$category2'";
-if ($conn->query($sql) === TRUE) {
-
-} else {
-  echo '<script language="javascript">';
-  echo 'alert("error deleting column from table")';
-  echo '</script>';
+$deleteTable = " TRUNCATE TABLE undo_table";
+if ($conn->query($deleteTable) === TRUE){
+    $copyTable = "INSERT undo_table SELECT * FROM table_data";
+    if ($conn->query($copyTable) === TRUE){
+    }
 }
+
+  $sql = "DELETE FROM table_data WHERE groupname='$groupName' AND category1='$category1' AND category2='$category2'";
+  if ($conn->query($sql) === TRUE) 
+  {
+    $log = "INSERT INTO change_log  (user, change_made) VALUES ('".$_SESSION['username']."', 'deleted column ".$category2." from ".$groupName."')";
+    if ( $conn->query($log) === TRUE ){
+
+    }
+  } 
+  else {
+    echo '<script language="javascript">';
+    echo 'alert("error deleting column from table")';
+    echo '</script>';
+  }
+
 
 require_once '../closeConnection.php';
 
-header('Location: ../editTable.php');
 ?>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 //connect to the server
 require_once '../connectToServer.php';
 
@@ -33,17 +34,22 @@ $dataLink = test_input($_POST['newTableDataLink']);
 //input variables into database
 
 if ($dataLink === "none"){
-  $sql = "INSERT INTO opspage_copy (groupname, category1, category1data, category2, data) VALUES ('$groupName', '$category1', '$category1Data', '$category2', '$data')";
-  if ($conn->query($sql) === TRUE) {
-
-  } else {
+  $sql = "INSERT INTO table_data (groupname, category1, category1data, category2, data) VALUES ('$groupName', '$category1', '$category1Data', '$category2', '$data')";
+  if ($conn->query($sql) === TRUE) 
+  {
+    $log = "INSERT INTO change_log  (user, change_made) VALUES ('".$_SESSION['username']."', 'added data ".$data." to ".$category1." in " .$groupName."')";
+    if ( $conn->query($log) === TRUE ){
+  
+    }
+  }
+   else {
     echo '<script language="javascript">';
     echo 'alert("error creating table data")';
     echo '</script>';
   }
 }
 else {
-  $sql = "INSERT INTO opspage_copy (groupname, category1, category1data, category2, data, link) VALUES ('$groupName', '$category1', '$category1Data', '$category2', '$data', '$dataLink')";
+  $sql = "INSERT INTO table_data (groupname, category1, category1data, category2, data, link) VALUES ('$groupName', '$category1', '$category1Data', '$category2', '$data', '$dataLink')";
   if ($conn->query($sql) === TRUE) {
 
   } else {
@@ -56,5 +62,4 @@ else {
 //close connection
 require_once '../closeConnection.php';
 
-header('Location: ../editTable.php');
 ?>

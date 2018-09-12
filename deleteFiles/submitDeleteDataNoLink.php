@@ -43,15 +43,21 @@ if (isset($_POST['category2']) && !empty($_POST['category2'])) {
 else{
   echo "category2 needs to be set";
 }
-if (isset($_POST['data']) && !empty($_POST['data'])) {
-  $data = test_input($_POST['data']);
+if (isset($_POST['category2Data']) && !empty($_POST['category2Data'])) {
+  $data = test_input($_POST['category2Data']);
 }
 else{
   echo "category2data needs to be set";
 }
 
+$deleteTable = " TRUNCATE TABLE undo_table";
+if ($conn->query($deleteTable) === TRUE){
+    $copyTable = "INSERT undo_table SELECT * FROM table_data";
+    if ($conn->query($copyTable) === TRUE){
+    }
+}
 
-$sql = "DELETE FROM opspage_copy WHERE groupname='$groupName' AND category1='$category1' AND category1data='$category1Data' AND category2='$category2' AND data='$data'";
+$sql = "DELETE FROM table_data WHERE groupname='$groupName' AND category1='$category1' AND category1data='$category1Data' AND category2='$category2' AND data='$data'";
 if ($conn->query($sql) === TRUE) {
 
 } else {

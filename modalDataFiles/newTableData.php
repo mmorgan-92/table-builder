@@ -1,7 +1,8 @@
-
 <?php
-require_once '../connectToServer.php';
+// the form that is present in the add new data modal
 
+require_once '../connectToServer.php';
+session_start();
 //declare variables
 $groupName = "";
 $category1 = "";
@@ -38,7 +39,7 @@ else{
 
 
 <!-- start of the form -->
-<form class="form-horizontal" action="submitFiles/submitTableData.php" method="post">
+<form class="form-horizontal" id="newTableDataForm" action="submitFiles/submitTableData.php" method="post">
   <div class="modal-body">
     <div class="row">
       <div class="col-sm-12">
@@ -123,6 +124,6 @@ else{
   </div>
   <!-- start of modal footer -->
   <div class="modal-footer">
-    <button type="submit" name="Submit" class="btn btn-info">Submit</button>
+    <button type="submit" id="newTableDataSubmit" name="Submit" data-target="#displayEditTable" data-gpName="<?php echo $groupName; ?>" class="btn btn-info">Submit</button>
   </div>
 </form>

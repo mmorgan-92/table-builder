@@ -1,18 +1,9 @@
 
-  <form class="form-horizontal" action="deleteFiles/submitDeleteColumn.php" method="post">
+  <form class="form-horizontal" id="deleteColumn" action="deleteFiles/submitDeleteColumn.php" method="post">
 
-      <?php
-      echo "<input type='hidden' class='form-control' name='groupName' value='".$row['groupname']."'>";
-      ?>
-      <?php
-      echo "<input type='hidden' class='form-control' name='category1' value='".$row['category1']."'>";
-      ?>
-      <?php
-      echo "<input type='hidden' class='form-control' name='category2' value='".$category2Row['category2']."'>";
-      ?>
 
-    <button type="submit" class='btn btn-danger btn-sm btn-circle deleteBtn' name="deleteColumn" class="btn btn-info" id="deleteColumnBtn">Delete Column</button>
-    <!--<button type="submit" class="cleanBtn" name="deleteColumn" id="deleteColumnBtn">
-      <i class="icon-minus-squared"></i>
-    </button>-->
+    <button type="submit" class='btn btn-danger btn-sm btn-circle deleteBtn' name="deleteColumn" class="btn btn-info" id="deleteColumnBtn"
+     data-target="#displayEditTable" data-gpname="<?php echo $groupName; ?>" data-category1="<?php echo $row['category1']; ?>"
+     data-category2row="<?php echo $category2Row['category2']; ?>" >Delete Column</button>
+
   </form>

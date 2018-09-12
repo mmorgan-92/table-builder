@@ -1,5 +1,9 @@
 $(document).ready(function(){
 
+
+// open links in new window
+
+
   //create new table
   $(document).on('click', '#createNewTable', function(e){
     e.preventDefault();
@@ -94,6 +98,32 @@ $(document).ready(function(){
      });
    });
 
+   //change product
+   $(document).on('click', '#changeProduct', function(e){
+
+    e.preventDefault();
+    var groupName = $(this).data('group'); // get groupname of clicked row
+    var category1 = $(this).data('category1'); // get category1 of clicked row
+    var category1data = $(this).data('category1data'); // get product name of clicked row
+
+    $('#change-product-dynamic-content').html(''); // leave this div blank
+
+    $.ajax({
+      url: 'modalDataFiles/changeProduct.php',  //do not put relitive path
+      type: 'POST',
+      data: {groupName: groupName, category1: category1, category1data: category1data},
+      dataType: 'html'
+    })
+    .done(function(data){
+      console.log(data);
+      $('#change-product-dynamic-content').html(''); // blank before load.
+      $('#change-product-dynamic-content').html(data); // load here
+
+    })
+    .fail(function(){
+      $('#change-product-dynamic-content').html('<i class="glyphicon glyphicon-info-sign"></i> Something went wrong, Please try again...');
+    });
+  });
    //create new table data
    $(document).on('click', '#createTableData', function(e){
 
@@ -124,7 +154,7 @@ $(document).ready(function(){
   //add link to data modal
   $(document).on('click', '#addLinkBtn', function(e){
     e.preventDefault();
-    $('#linkDiv').show(2000);
+    $('#linkDiv').show(500);
   });
 
 

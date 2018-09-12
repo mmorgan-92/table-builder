@@ -1,0 +1,391 @@
+/*
+///////////////////////////////////////////////////////////////////////////////////
+styling for the overall page
+///////////////////////////////////////////////////////////////////////////////////
+*/
+
+body{
+    background-color: #181818;
+    transition: background-color .5s;
+}
+
+@font-face {
+    font-family: 'fontello';
+    src: url('../assets/font/fontello.eot?29812655');
+    src: url('../assets/font/fontello.eot?29812655#iefix') format('embedded-opentype'),
+         url('../assets/font/fontello.woff2?29812655') format('woff2'),
+         url('../assets/font/fontello.woff?29812655') format('woff'),
+         url('../assets/font/fontello.ttf?29812655') format('truetype'),
+         url('../assets/font/fontello.svg?29812655#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .float-right {
+    text-align: right;
+  }
+
+  li {
+    float: left;
+}
+
+/*
+///////////////////////////////////////////////////////////////////////////////////
+styling for header
+///////////////////////////////////////////////////////////////////////////////////
+*/
+.well{
+    text-align: center;
+    background-color: #292929;
+    color: #ffffff;
+    border: none;
+}
+
+.container h1 {
+    padding-bottom: 1em;
+}
+
+.headerBtn{
+    background-color: #ffce00;
+    color: #292929;
+    border: 1px solid #292929;
+    z-index: 1;
+    -webkit-box-shadow: 0px 0px 0px 0px rgb(255, 255, 255);
+  -moz-box-shadow: 0px 0px 0px 0px rgb(255, 255, 255);
+  box-shadow: 0px 0px 0px 0px rgb(255, 255, 255);
+    -webkit-transition: box-shadow .25s; /* For Safari 3.1 to 6.0 */
+      transition: box-shadow .25s;
+  }
+  
+  .headerBtn:hover{
+    z-index: 2;
+    -webkit-box-shadow: 0px 2px 10px 0px rgb(255, 255, 255);
+  -moz-box-shadow: 0px 2px 10px 0px rgb(255, 255, 255);
+  box-shadow: 0px 2px 10px 0px rgb(255, 255, 255);
+  }
+
+/*
+///////////////////////////////////////////////////////////////////////////////////
+styling for Navigation Bar
+///////////////////////////////////////////////////////////////////////////////////
+*/
+.tableNavBtn{
+    visibility: hidden;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+#main{
+transition: margin-right .5s;
+padding: 16px;
+}
+
+/*
+///////////////////////////////////////////////////////////////////////////////////
+styling for Modals
+///////////////////////////////////////////////////////////////////////////////////
+*/
+
+.modal-header{
+    text-align: center;
+  }
+  
+  .modal-body {
+    margin: 15px;
+  }
+
+/*
+///////////////////////////////////////////////////////////////////////////////////
+styling for normal tables
+///////////////////////////////////////////////////////////////////////////////////
+*/
+.tableTitle .row {
+    cursor: pointer;
+  }
+  
+.normalTable{
+    background-color: #292929;
+    border: 1px solid #292929;
+    border-radius: 5px;
+    color: #ffffff;
+    margin-bottom: 5%;
+    padding-top: 1%;
+    -webkit-box-shadow: 0px 0px 0px 0px rgb(255, 255, 255);
+    -moz-box-shadow: 0px 0px 0px 0px rgb(255, 255, 255);
+    box-shadow: 0px 0px 0px 0px rgb(255, 255, 255);
+      -webkit-transition: box-shadow .25s; /* For Safari 3.1 to 6.0 */
+        transition: box-shadow .25s;
+  
+  }
+  
+.normalTable:hover{
+    border: 1px solid #292929;
+    margin-bottom: 5%;
+    padding-top: 1%;
+    -webkit-box-shadow: 0px 2px 10px 0px rgb(255, 255, 255);
+  -moz-box-shadow: 0px 2px 10px 0px rgb(255, 255, 255);
+  box-shadow: 0px 2px 10px 0px rgb(255, 255, 255);
+  }
+  
+  .table{
+    color: #292929;
+    background-color: #f9f9f9;
+  }
+
+
+
+  .table a:hover{
+    color: #062f4f;
+  }
+  
+  .tableProducts{
+    display: flex;
+    text-align: center;
+  }
+  
+  .topBtn {
+    background-color: #ffce00;
+    color: #292929;
+    border: 1px solid #292929;
+    z-index: 1;
+    -webkit-box-shadow: 0px 0px 0px 0px rgb(255, 255, 255);
+  -moz-box-shadow: 0px 0px 0px 0px rgb(255, 255, 255);
+  box-shadow: 0px 0px 0px 0px rgb(255, 255, 255);
+    -webkit-transition: box-shadow .25s; /* For Safari 3.1 to 6.0 */
+      transition: box-shadow .25s;
+  }
+  .topBtn:hover{
+    color: #292929;
+    z-index: 2;
+    -webkit-box-shadow: 0px 2px 10px 0px rgb(255, 255, 255);
+  -moz-box-shadow: 0px 2px 10px 0px rgb(255, 255, 255);
+  box-shadow: 0px 2px 10px 0px rgb(255, 255, 255);
+  }
+
+  .fa-bars{
+    -webkit-font-size: 48px;
+  -moz-font-size: 48px;
+  font-size: 48px;
+    -webkit-transition: font-size .25s; /* For Safari 3.1 to 6.0 */
+      transition: font-size .25s;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  }
+  
+  .fa-bars:hover{
+    -webkit-font-size: 58px;
+  -moz-font-size: 58px;
+  font-size: 58px;
+  }
+
+
+  /*
+///////////////////////////////////////////////////////////////////////////////////
+styling for Edit tables
+///////////////////////////////////////////////////////////////////////////////////
+*/
+
+.editTables{
+    background-color: #ffffff;
+    border: 1px solid #292929;
+    border-radius: 5px;
+    color: #292929;
+    margin-bottom: 5%;
+    padding-top: 1%;
+    -webkit-box-shadow: 0px 2px 10px 0px rgb(255, 255, 255);
+  -moz-box-shadow: 0px 2px 10px 0px rgb(255, 255, 255);
+  box-shadow: 0px 2px 10px 0px rgb(255, 255, 255);
+  }
+
+  
+  
+
+  .tableBtn{
+    background-color: #062f4f;
+    color: #ffffff;
+    border: none;
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);
+  -moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);
+    -webkit-transition: box-shadow .25s; /* For Safari 3.1 to 6.0 */
+      transition: box-shadow .25s;
+  }
+  .tableBtn:hover{
+    color: #ffffff;
+    -webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.75);
+  }
+  
+  .deleteBtn{
+    background-color: #630000;
+    color: #ffffff;
+    border: none;
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);
+  -moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);
+    -webkit-transition: box-shadow .25s; /* For Safari 3.1 to 6.0 */
+      transition: box-shadow .25s;
+  }
+  
+  .deleteBtn:hover{
+    background-color: #630000;
+    color: #ffffff;
+    -webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.75);
+  }
+  
+  .createTable{
+    width: 15em;
+    height: 4em;
+  }
+  
+  .tableDelete{
+    width: 10em;
+    height: 3em;
+  }
+
+  .add-data {
+    font-style: italic;
+    color: gray;
+  }
+  
+  .cleanBtn {
+    background: none !important;
+    color: #062f4f;
+    border: none;
+    padding: 0! important;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit !important;
+  }
+
+  [class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+  
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    /* opacity: .8; */
+  
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+  
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+  
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+  
+    /* you can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+  
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+  }
+  
+  .icon-plus-squared:before { content: '\f0fe'; } /* '' */
+  .icon-minus-squared:before { content: '\f146'; } /* '' */
+  .icon-pencil-squared:before { content: '\f14b'; } /* '' */
+
+   /*
+///////////////////////////////////////////////////////////////////////////////////
+styling for sidebar
+///////////////////////////////////////////////////////////////////////////////////
+*/
+
+.sidebarCol{
+    text-align: center;
+    padding: 5em;
+    color: #f0f0f0;
+    border-right: 1px solid #f0f0f0;
+}
+
+.sidebarTables{
+    padding: 1em;
+    background-color: #ffce00;
+    color: #292929;
+    border: 1px solid #292929;
+    border-radius: 5px;
+    z-index: 1;
+    -webkit-box-shadow: 0px 0px 0px 0px rgb(255, 255, 255);
+  -moz-box-shadow: 0px 0px 0px 0px rgb(255, 255, 255);
+  box-shadow: 0px 0px 0px 0px rgb(255, 255, 255);
+    -webkit-transition: box-shadow .25s; /* For Safari 3.1 to 6.0 */
+      transition: box-shadow .25s;
+}
+
+.sidebarTables:hover{
+    cursor: pointer;
+    -webkit-box-shadow: 0px 2px 10px 0px rgb(255, 255, 255);
+    -moz-box-shadow: 0px 2px 10px 0px rgb(255, 255, 255);
+    box-shadow: 0px 2px 10px 0px rgb(255, 255, 255);
+}
+
+   /*
+///////////////////////////////////////////////////////////////////////////////////
+styling for footer
+///////////////////////////////////////////////////////////////////////////////////
+*/
+
+.footerLinks a{
+    color: #ffffff;
+}
+
+.footerLinks a:hover{
+   color: #ffce00;
+   text-decoration: none;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+.sidebarCol{
+    visibility: hidden;
+}
+
+.tableNavBtn{
+    visibility: visible;
+}
+
+}
+
+

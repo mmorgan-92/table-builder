@@ -38,16 +38,27 @@ else{
   echo "category1Data needs to be set";
 }
 
-$sql = "DELETE FROM opspage_copy WHERE groupname='$groupName' AND category1='$category1' AND category1data='$category1Data'";
-if ($conn->query($sql) === TRUE) {
-
-} else {
-  echo '<script language="javascript">';
-  echo 'alert("error deleting data from table")';
-  echo '</script>';
+$deleteTable = " TRUNCATE TABLE undo_table";
+if ($conn->query($deleteTable) === TRUE){
+    $copyTable = "INSERT undo_table SELECT * FROM table_data";
+    if ($conn->query($copyTable) === TRUE){
+    }
 }
+  $sql = "DELETE FROM table_data WHERE groupname='$groupName' AND category1='$category1' AND category1data='$category1Data'";
+  if ($conn->query($sql) === TRUE) 
+  {
+    $log = "INSERT INTO change_log  (user, change_made) VALUES ('".$_SESSION['username']."', 'deleted row ".$category1data." from ".$groupName."')";
+    if ( $conn->query($log) === TRUE ){
+
+    }
+  }
+   else {
+    echo '<script language="javascript">';
+    echo 'alert("error deleting data from table")';
+    echo '</script>';
+  }  
+
 
 require_once '../closeConnection.php';
 
-header('Location: ../editTable.php');
 ?>

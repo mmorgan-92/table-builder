@@ -1,4 +1,5 @@
 <?php
+session_start();
 //connect to the server
 require_once '../connectToServer.php';
 
@@ -24,12 +25,13 @@ $category1 = test_input($_POST['category1']);
 $columnName = test_input($_POST['columnName']);
 
 //input variables into database
-$getCategory1Data = "SELECT DISTINCT category1data FROM opspage_copy WHERE groupname='".$groupName. "' AND category1='".$category1. "'";
+$getCategory1Data = "SELECT DISTINCT category1data FROM table_data WHERE groupname='".$groupName. "' AND category1='".$category1. "'";
 $getCategory1DataResult = mysqli_query($conn, $getCategory1Data);
-if ($getCategory1DataResult->num_row > 0){
+if ($getCategory1DataResult->num_rows > 1){
 while($category1DataRow = mysqli_fetch_array($getCategory1DataResult)){
     $category1data = $category1DataRow['category1data'];
-    $sql = "INSERT INTO opspage_copy (groupname, category1, category1data, category2) VALUES ('$groupName', '$category1', '$category1data', '$columnName')";
+  if ($category1data != NULL){
+    $sql = "INSERT INTO table_data (groupname, category1, category1data, category2) VALUES ('$groupName', '$category1', '$category1data', '$columnName')";
     if ($conn->query($sql) === TRUE) {
 
     } else {
@@ -38,12 +40,18 @@ while($category1DataRow = mysqli_fetch_array($getCategory1DataResult)){
       echo '</script>';
     }
   }
+  }
 }
 else{
-  $sql = "INSERT INTO opspage_copy (groupname, category1, category2) VALUES ('$groupName', '$category1', '$columnName')";
-  if ($conn->query($sql) === TRUE) {
+  $sql = "INSERT INTO table_data (groupname, category1, category2) VALUES ('$groupName', '$category1', '$columnName')";
+  if ($conn->query($sql) === TRUE)
+  {
+    $log = "INSERT INTO change_log  (user, change_made) VALUES ('".$_SESSION['username']."', 'added column ".$category2." to ".$groupName."')";
+    if ( $conn->query($log) === TRUE ){
 
-  } else {
+    }
+  }
+   else {
     echo '<script language="javascript">';
     echo 'alert("error creating table")';
     echo '</script>';
@@ -54,5 +62,4 @@ else{
 //close connection
 require_once '../closeConnection.php';
 
-header('Location: ../editTable.php');
 ?>

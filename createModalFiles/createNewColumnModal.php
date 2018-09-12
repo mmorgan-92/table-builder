@@ -1,5 +1,7 @@
 <?php
-echo "<button class='btn btn-info btn-sm btn-circle' data-toggle='modal' data-target='#newColumnModal' data-group='".$row['groupname']."' data-category1='".$row['category1']."' id='createNewColumn'>Create New Column</button>";
+//Modal to create a new column
+
+echo "<button class='btn tableBtn btn-sm btn-circle' data-toggle='modal' data-target='#newColumnModal' data-group='".$groupName."' data-category1='".$row['category1']."' id='createNewColumn'>New Column</button>";
 echo "<div id='newColumnModal' class='modal fade' tabindex='-1' role='dialog' aria-labelledby='ColumnLabel' aria-hidden='true' style='dispaly: none;'>";
 ?>
   <div class="modal-dialog">

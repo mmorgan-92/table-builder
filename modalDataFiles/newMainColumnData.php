@@ -1,4 +1,7 @@
 <?php
+// the form that is present in the new row modal
+
+
 require_once '../connectToServer.php';
 
 //declare variables
@@ -20,7 +23,7 @@ if (isset($_POST['category1']) && !empty($_POST['category1'])) {
 
 ?>
 <!-- start of the form -->
-<form class="form-horizontal" action="submitFiles/submitNewMainColumn.php" method="post">
+<form class="form-horizontal" id="newProductForm" action="submitFiles/submitNewMainColumn.php" method="post">
   <div class="modal-body">
     <div class="row">
       <div class="col-sm-12">
@@ -58,6 +61,6 @@ if (isset($_POST['category1']) && !empty($_POST['category1'])) {
   </div>
   <!-- start of modal footer -->
   <div class="modal-footer">
-    <button type="submit" name="Submit" class="btn btn-info">Submit</button>
+    <button type="submit" name="Submit" class="mySubmitBtn" id="newProductSubmit" data-target="#displayEditTable" data-gpName="<?php echo $groupName; ?>" class="btn btn-info">Submit</button>
   </div>
 </form>
